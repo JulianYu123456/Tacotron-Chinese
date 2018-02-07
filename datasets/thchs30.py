@@ -29,6 +29,7 @@ def build_from_path(in_dir, out_dir, num_workers=1, tqdm=lambda x: x):
   for trn in trn_files:
     with open(trn) as f:
       f.readline()
+      f.readline()
       pinyin = f.readline().strip('\n')
       wav_file = trn[:-4]
       task = partial(_process_utterance, out_dir, index, wav_file, pinyin)
