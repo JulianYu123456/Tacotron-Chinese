@@ -24,17 +24,21 @@ def text_to_sequence(text, cleaner_names):
     Returns:
       List of integers corresponding to the symbols in the text
   '''
-  sequence = []
+  # sequence = []
 
   # Check for curly braces and treat their contents as ARPAbet:
-  while len(text):
-    m = _curly_re.match(text)
-    if not m:
-      sequence += _symbols_to_sequence(_clean_text(text, cleaner_names))
-      break
-    sequence += _symbols_to_sequence(_clean_text(m.group(1), cleaner_names))
-    sequence += _arpabet_to_sequence(m.group(2))
-    text = m.group(3)
+  # while len(text):
+  #   m = _curly_re.match(text)
+  #   if not m:
+  #     sequence += _symbols_to_sequence(_clean_text(text, cleaner_names))
+  #     break
+  #   sequence += _symbols_to_sequence(_clean_text(m.group(1), cleaner_names))
+  #   sequence += _arpabet_to_sequence(m.group(2))
+  #   text = m.group(3)
+
+  text = _clean_text(text, cleaner_names)
+  phones = text.split(' ')
+  sequence = [_symbol_to_id[p] for p in phones]
 
   # Append EOS token
   sequence.append(_symbol_to_id['~'])
@@ -50,7 +54,7 @@ def sequence_to_text(sequence):
       # Enclose ARPAbet back in curly braces:
       if len(s) > 1 and s[0] == '@':
         s = '{%s}' % s[1:]
-      result += s
+      result += s + ' '
   return result.replace('}{', ' ')
 
 
