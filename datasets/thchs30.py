@@ -39,7 +39,6 @@ def build_from_path(in_dir, out_dir, num_workers=1, tqdm=lambda x: x):
 
   trn_files += glob.glob(os.path.join(in_dir, 'data', 'B2_*.trn'))
   trn_files += glob.glob(os.path.join(in_dir, 'data', 'B4_*.trn'))
-  trn_files += glob.glob(os.path.join(in_dir, 'data', 'B6_*.trn'))
   trn_files += glob.glob(os.path.join(in_dir, 'data', 'B7_*.trn'))
   trn_files += glob.glob(os.path.join(in_dir, 'data', 'B11_*.trn'))
   trn_files += glob.glob(os.path.join(in_dir, 'data', 'B12_*.trn'))
