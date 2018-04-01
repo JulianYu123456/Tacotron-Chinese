@@ -2,7 +2,10 @@
 
 An implementation of Tacotron speech synthesis in TensorFlow.
 
-
+### some issue
+···
+https://github.com/keithito/tacotron/issues/118
+···
 ### Audio Samples
 
   * **[Audio Samples](https://keithito.github.io/audio-samples/)** from models trained using this repo.
