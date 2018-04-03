@@ -3,9 +3,10 @@
 An implementation of Tacotron speech synthesis in TensorFlow.
 
 ### some issue
-···
+```
 https://github.com/keithito/tacotron/issues/118
-···
+https://github.com/jiaaro/pydub
+```
 ### Audio Samples
 
   * **[Audio Samples](https://keithito.github.io/audio-samples/)** from models trained using this repo.
